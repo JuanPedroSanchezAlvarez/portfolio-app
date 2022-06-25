@@ -5,8 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
-import { PaisModule } from './pais/pais.module';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -17,9 +15,7 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule,
     HttpClientModule,
-    PaisModule,
     SharedModule
   ],
   providers: [],
