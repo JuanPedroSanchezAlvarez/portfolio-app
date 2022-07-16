@@ -8,7 +8,8 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     ErrorPageComponent
   ],
   exports: [
-    MenuComponent
+    MenuComponent,
+    ErrorPageComponent
   ],
   imports: [
   ]
