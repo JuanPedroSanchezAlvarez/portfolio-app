@@ -1,10 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
-import { PrimeNgModule } from '../prime-ng/prime-ng.module';
-
-
 
 @NgModule({
   declarations: [
@@ -14,9 +9,6 @@ import { PrimeNgModule } from '../prime-ng/prime-ng.module';
     MenuComponent
   ],
   imports: [
-    CommonModule,
-    RouterModule,
-    PrimeNgModule
   ]
 })
 export class SharedModule { }
