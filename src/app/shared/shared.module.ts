@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { SideMenuComponent } from './side-menu/side-menu.component';
 
 @NgModule({
   declarations: [
-    ErrorPageComponent
+    ErrorPageComponent,
+    SideMenuComponent
   ],
   exports: [
-    ErrorPageComponent
+    ErrorPageComponent,
+    SideMenuComponent
   ],
   imports: [
   ]
