@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 
@@ -7,11 +9,13 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
     ErrorPageComponent,
     SideMenuComponent
   ],
+  imports: [
+    CommonModule,
+    RouterModule
+  ],
   exports: [
     ErrorPageComponent,
     SideMenuComponent
-  ],
-  imports: [
   ]
 })
 export class SharedModule { }
