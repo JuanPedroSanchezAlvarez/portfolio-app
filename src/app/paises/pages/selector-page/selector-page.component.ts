@@ -19,7 +19,9 @@ export class SelectorPageComponent implements OnInit {
 
   regiones: string[] = [];
   paises: PaisSmall[] = [];
-  fronteras: string[] = [];
+  fronteras: PaisSmall[] = [];
+
+  cargando: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private paisesService: PaisesService) { }
 
@@ -30,20 +32,25 @@ export class SelectorPageComponent implements OnInit {
       .pipe(
         tap(( _ ) => {
           this.miFormulario.get('pais')?.reset('');
+          this.cargando = true;
         }),
         switchMap(region => this.paisesService.getPaisesPorRegion(region))
       ).subscribe(paises => {
         this.paises = paises;
+        this.cargando = false;
       });
     /* Cuando cambia el País */
     this.miFormulario.get('pais')?.valueChanges
       .pipe(
         tap(( _ ) => {
           this.miFormulario.get('frontera')?.reset('');
+          this.cargando = true;
         }),
-        switchMap(codigo => this.paisesService.getPaisPorCodigo(codigo))
-      ).subscribe(pais => {
-        this.fronteras = pais?.borders || [];
+        switchMap(codigo => this.paisesService.getPaisPorCodigo(codigo)),
+        switchMap(pais => this.paisesService.getPaisesPorCodigos(pais?.borders!))
+      ).subscribe(paises => {
+        this.fronteras = paises;
+        this.cargando = false;
       });
   }
 
