@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as mapboxgl from 'mapbox-gl';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'portfolio-app';
 
-  mostrar: boolean = true;
-
   constructor() {}
 
   ngOnInit() {
-    
+    (mapboxgl as any).accessToken = environment.mapboxToken;
   }
 
 }
